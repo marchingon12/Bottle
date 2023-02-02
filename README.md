@@ -1,6 +1,6 @@
 <div align="center">
 <img src="https://te.legra.ph/file/8234db16f1e9418b73005.png" align="center" style="width: 100%" />
-<h1>BitGuardian: Another Bitwarden Client</h1>
+<h1>Bottle: A Send Client Built For Android</h1>
 </div>
 
 <p align="center">
@@ -10,14 +10,14 @@
 
 ------
 
-**Bottle** is a [FOSS](https://en.m.wikipedia.org/wiki/Free_and_open-source_software) Android application with the goal of making a native client with 
+**Bottle** is a [FOSS](https://en.m.wikipedia.org/wiki/Free_and_open-source_software) Android application with the goal of making a native Android client for simplicity and flexibility  
 
-The whole reason I started this project is because I mainly disliked the outdated UI the Bitwarden team were using for mobile clients, but also due to the slowness of the app and complexity of the source code. Understandably, the Bitwarden Team wanted to build apps cross-platform using Xamarin with the programming language used for the official client is C#, which is mainly used for Windows desktop apps. Problem: Android developers != Windows developers, thus leading to less contributions and motivation to develop it further.
+
 
 <div align="center">
 
 
-[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="65">](https://github.com/marchingon12/BitGuardian/releases/latest)
+[<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="65">](https://github.com/marchingon12/Bottle/releases/latest)
 
 </div>
 
@@ -34,8 +34,8 @@ The whole reason I started this project is because I mainly disliked the outdate
 <h2 align="center">Highlights</h2>
 
 - Clean & beautiful UI based on Google's [material design three](https://m3.material.io/) guidelines.
-- Same goodies & functionality as with the official Bitwarden client, just faster and more reliable.
-- Compatible with Android 10.0 and above (API 29+), no guarantee for older versions.
+- Same goodies & functionality for Send just as you would on a browser, brought onto native Android.
+- Compatible with Android 7.1 and above (API 25+), no guarantee for older versions.
 - Supports [Material You](https://www.androidpolice.com/everything-we-love-about-material-you/amp/) theming in devices running on Android 12+
 
 ------
@@ -44,7 +44,7 @@ The whole reason I started this project is because I mainly disliked the outdate
 
 If you want to make app available in your language, you're very welcome to create a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) with your translation file.
 The string resources can be found under `/app/src/main/res/values/strings.xml`. It is easiest to make a translation using the Android Studio XML editor, but you can always go with your favorite XML-text editor instead.
-Checkout this guide to learn more about translation strings from [Helpshift](https://developers.helpshift.com/android/i18n/) for Android.
+Checkout this guide to learn more about translation strings from [Weblate](https://developers.helpshift.com/android/i18n/) for Android.
 
 ------
 
