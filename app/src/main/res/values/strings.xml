@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Bottle</string>
+
+    <!-- Settings -->
+    <string name="general_settings">General</string>
+    <string name="general_settings_desc">App language, notifications</string>
+    <string name="appearance">Appearance</string>
+    <string name="appearance_desc">Theme, dark mode</string>
+    <string name="directory">Downloads</string>
+    <string name="directory_desc">Choose storage options for saving files</string>
+    <string name="security">Security</string>
+    <string name="security_desc">App lock, fingerprint, secure screen</string>
+    <string name="about">About</string>
+    <string name="about_desc">Version, releases, credits</string>
+
+    <!-- Accessibility -->
+    <string name="back_button">Go back</string>
 </resources>
