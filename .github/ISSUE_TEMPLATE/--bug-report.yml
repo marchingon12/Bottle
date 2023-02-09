@@ -1,3 +1,4 @@
+# TODO: Change info of issue guide.
 name: "\U0001F41E Bug report"
 description: Create a report to help us improve.
 title: "[Bug]: "
@@ -6,10 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        - Please do your best to search for duplicate issues before filing a new issue so we can keep our issue board clean.
-        - Have a look at ["I want to file an issue!"][info] for more information.
-# TODO: Change info of issue guide.
-        [info]: https://github.com/mozilla-mobile/fenix#i-want-to-file-an-issue
+        Please do your best to search for duplicate issues before filing a new issue so we can keep our issue board clean.
   - type: textarea
     attributes:
       label: Steps to reproduce

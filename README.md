@@ -10,9 +10,10 @@
 
 ------
 
-**Bottle** is a [FOSS](https://en.m.wikipedia.org/wiki/Free_and_open-source_software) Android application with the goal of making a native Android client for simplicity and flexibility  
+**Bottle** is a [FOSS][wiki] Android application with the goal of making a native Android client for quickly uploading and downloading files with simplicity and flexibility using the [Send][send] service.
 
-
+[wiki]: https://en.m.wikipedia.org/wiki/Free_and_open-source_software
+[send]: https://github.com/timvisee/send
 
 <div align="center">
 
@@ -33,18 +34,24 @@
 
 <h2 align="center">Highlights</h2>
 
-- Clean & beautiful UI based on Google's [material design three](https://m3.material.io/) guidelines.
+- Clean & beautiful UI based on Google's [material design 3][md3] guidelines.
 - Same goodies & functionality for Send just as you would on a browser, brought onto native Android.
 - Compatible with Android 7.1 and above (API 25+), no guarantee for older versions.
-- Supports [Material You](https://www.androidpolice.com/everything-we-love-about-material-you/amp/) theming in devices running on Android 12+
+- Supports [Material You][material-you] theming in devices running on Android 12+
+
+[md3]: https://m3.material.io/
+[material-you]: https://www.androidpolice.com/everything-we-love-about-material-you/amp/
 
 ------
 
 <h2 align="center">Translations</h2>
 
-If you want to make app available in your language, you're very welcome to create a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) with your translation file.
+If you want to make app available in your language, you're very welcome to create a [pull request][gh-pr] with your translation file.
 The string resources can be found under `/app/src/main/res/values/strings.xml`. It is easiest to make a translation using the Android Studio XML editor, but you can always go with your favorite XML-text editor instead.
-Checkout this guide to learn more about translation strings from [Weblate](https://developers.helpshift.com/android/i18n/) for Android.
+Checkout this guide to learn more about translation strings from [Weblate][weblate] for Android.
+
+[gh-pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
+[weblate]: https://developers.helpshift.com/android/i18n/
 
 ------
 
@@ -61,40 +68,61 @@ Checkout this guide to learn more about translation strings from [Weblate](https
 
 <h2 align="center">Tech Stack</h2>
 
-- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
-- [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - To improve performance by doing I/O tasks out of main thread asynchronously.
+- [Kotlin][kotlin] - First class and official programming language for Android development.
+- [Coroutines][co-routines] - To improve performance by doing I/O tasks out of main thread asynchronously.
 - [Flow](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/) - A cold asynchronous data stream that sequentially emits values and completes normally or with an exception.
-- [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
-    - [Jetpack Compose](https://developer.android.com/jetpack/compose?gclsrc=ds&gclsrc=ds) - Jetpack Compose is Android’s recommended modern toolkit for building native UI
-    - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
-    - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.
-- [OkHttp3](https://square.github.io/okhttp/) - OkHttp is an HTTP client for Android that’s efficient by default.
-- [Gson](https://github.com/google/gson) - A Java serialization/deserialization library to convert Java Objects into JSON and back.
-- [Coil](https://coil-kt.github.io/coil/compose/) - An image loading library for Android backed by Kotlin Coroutines.
-- [Dagger-Hilt](https://dagger.dev/hilt/) For [Dependency injection (DI)](https://developer.android.com/training/dependency-injection)
-- [Room database](https://developer.android.com/jetpack/androidx/releases/room) - Persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
+- [Android Architecture Components][arch] - Collection of libraries that help you design robust, testable, and maintainable apps.
+    - [Jetpack Compose][compose] - Jetpack Compose is Android’s recommended modern toolkit for building native UI
+    - [LiveData][livedata] - Data objects that notify views when the underlying database changes.
+    - [ViewModel][viewmodel] - Stores UI-related data that isn't destroyed on UI changes.
+- [OkHttp3][http] - OkHttp is an HTTP client for Android that’s efficient by default.
+- [Gson][gson] - A Java serialization/deserialization library to convert Java Objects into JSON and back.
+- [Coil][coil] - An image loading library for Android backed by Kotlin Coroutines.
+- [Dagger-Hilt][dagger] For [Dependency injection (DI)][inject]
+- [Room database][room] - Persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
+
+[kotlin]: https://kotlinlang.org/
+[co-routines]: https://kotlinlang.org/docs/reference/coroutines-overview.html
+[arch]: https://developer.android.com/topic/libraries/architecture
+[compose]: https://developer.android.com/jetpack/compose?gclsrc=ds&gclsrc=ds
+[livedata]: https://developer.android.com/topic/libraries/architecture/livedata
+[viewmodel]: https://developer.android.com/topic/libraries/architecture/viewmodel
+[http]: https://square.github.io/okhttp/
+[gson]: https://github.com/google/gson
+[coil]: https://coil-kt.github.io/coil/compose/
+[dagger]: https://dagger.dev/hilt/
+[inject]: https://developer.android.com/training/dependency-injection
+[room]: https://developer.android.com/jetpack/androidx/releases/room
 
 ------
 
 <h2 align="center">License</h2>
 
-[Apache License 2.0][license] © [Stɑrry Shivɑm][github]
+[MIT License][license] © [Austin Hornhead][github]
 
 [license]: /LICENSE
-[github]: https://github.com/starry69
+[github]: https://github.com/marchingon12
 
 ```
-Copyright 2022 - 2023 Stɑrry Shivɑm
+Copyright (c) 2023-present Austin Hornhead
+MIT License
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-       http://www.apache.org/licenses/LICENSE-2.0
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
 ```
