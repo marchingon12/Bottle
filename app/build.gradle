@@ -1,7 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id "com.mikepenz.aboutlibraries.plugin" version "10.5.2"
 }
+
+apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 
 android {
     namespace 'com.marchingon12.bottle'
@@ -46,6 +49,11 @@ android {
     }
 }
 
+aboutLibraries {
+    // Remove the "generated" timestamp to allow for reproducible builds
+    excludeFields = ["generated"]
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -76,6 +84,9 @@ dependencies {
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
+    // Open Source Libraries Screen.
+    implementation "com.mikepenz:aboutlibraries-core:10.5.2"
+    implementation "com.mikepenz:aboutlibraries-compose:10.5.2"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

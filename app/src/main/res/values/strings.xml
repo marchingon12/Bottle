@@ -13,6 +13,12 @@
     <string name="about">About</string>
     <string name="about_desc">Version, releases, credits</string>
 
+    <!-- Inner Settings -->
+    <string name="version">Version</string>
+    <string name="credits">Credits</string>
+    <string name="updates">Updates</string>
+
     <!-- Accessibility -->
     <string name="back_button">Go back</string>
+    <string name="settings_button">Settings</string>
 </resources>
