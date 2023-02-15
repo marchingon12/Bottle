@@ -14,9 +14,15 @@
     <string name="about_desc">Version, releases, credits</string>
 
     <!-- Inner Settings -->
+    <string name="discord">Discord Server</string>
+    <string name="gh_issue">Github Issue</string>
     <string name="version">Version</string>
     <string name="credits">Credits</string>
     <string name="updates">Updates</string>
+    <string name="donation">Donations</string>
+    <string name="help">Help</string>
+    <string name="changelog">Changelog</string>
+    <string name="changelog_desc">New Stuff</string>
 
     <!-- Accessibility -->
     <string name="back_button">Go back</string>
