@@ -21,6 +21,7 @@ object Route {
     // Inner settings
     const val CREDITS = "credits"
     const val LANGUAGES = "languages"
+    const val DONATION = "donation"
     const val AUTO_UPDATE = "auto_update"
     const val CHANGELOG = "changelog"
 
