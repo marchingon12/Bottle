@@ -79,9 +79,9 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v0.1.15
         with:
-          token: {{ secrets.GITHUB_TOKEN }}
-          name: {{ steps.changelog.outputs.tag }}
-          tag_name: {{ steps.changelog.outputs.tag }}
-          body: {{ steps.changelog.outputs.clean_changelog }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ steps.changelog.outputs.tag }}
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
           prerelease: false
-          files: {{ steps.sign_app.signedFile }}
+          files: ${{ steps.sign_app.signedFile }}
