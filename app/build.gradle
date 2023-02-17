@@ -2,9 +2,11 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id "com.mikepenz.aboutlibraries.plugin" version "10.5.2"
+    id "io.github.reactivecircus.app-versioning" version "1.2.0"
 }
 
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
+apply plugin: 'io.github.reactivecircus.app-versioning'
 
 android {
     namespace 'com.marchingon12.bottle'
@@ -23,10 +25,28 @@ android {
         }
     }
 
+    appVersioning {
+        overrideVersionName { gitTag, providers, variantInfo ->
+            def semVer = SemVer.fromGitTag(gitTag)
+            semVer.major * 10000 + semVer.minor * 100 + semVer.patch
+        }
+        releaseBuildOnly.set(true)
+        enabled.set(false)
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        applicationVariants.all{
+            variant ->
+                variant.outputs.each{
+                    output->
+                        def name = "Bottle-${variant.versionName}.apk"
+                        output.outputFileName = name
+                }
         }
     }
     compileOptions {
@@ -84,9 +104,20 @@ dependencies {
     // Jetpack Compose Integration
     implementation "androidx.navigation:navigation-compose:$nav_version"
 
+    // JSON Parser
+    implementation "com.google.code.gson:gson:2.10.1"
+
+    def richtext_version = "0.16.0"
+
+    // RichText formatter
+    implementation "com.halilibo.compose-richtext:richtext-commonmark:$richtext_version"
+
     // Open Source Libraries Screen.
     implementation "com.mikepenz:aboutlibraries-core:10.5.2"
     implementation "com.mikepenz:aboutlibraries-compose:10.5.2"
+
+    // Lazy Logging
+    implementation "com.jakewharton.timber:timber:5.0.1"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
