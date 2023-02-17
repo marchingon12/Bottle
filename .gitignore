@@ -1,6 +1,4 @@
-*.iml
-.gradle
-/local.properties
+# INTELLIJ IDEA
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -10,8 +8,14 @@
 /.idea/assetWizardSettings.xml
 /.idea/git_toolbox_prj.xml
 .DS_Store
+
+# Build files
+.gradle
 /build
+/app/release
+/app/build
 /captures
 .externalNativeBuild
 .cxx
+*.iml
 local.properties
