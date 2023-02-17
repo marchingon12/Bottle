@@ -28,6 +28,7 @@ jobs:
         uses: actions/setup-java@v3.10.0
         with:
           java-version: 1.8
+          distribution: 'temurin'
           cache: gradle
 
       # - name: Export environment variables
