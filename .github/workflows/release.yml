@@ -1,0 +1,86 @@
+###########################################################################
+#   Releases for Signing Android App with Conventional Commit Changelog   #
+#      Austin Hornhead <marchingon12:augustthegreat.cool@gmail.com>       #
+###########################################################################
+
+name: Releases
+on:
+  push:
+    tags:
+      - "v*"
+    branches:
+      - master
+
+jobs:
+  apk:
+    name: Generate APK and sign
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Gradle Wrapper Check
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3.10.0
+        with:
+          java-version: 1.8
+          cache: gradle
+
+      # - name: Export environment variables
+      #   run: |
+      #     echo "::set-env name=VERSION_NAME::$(cat app/build/outputs/app_versioning/release/version_name.txt)"
+      #     echo "::set-env name=VERSION_CODE::$(cat app/build/outputs/app_versioning/release/version_code.txt)"
+
+      - name: Build APK
+        id: build_app
+        run: bash ./gradlew assembleRelease --stacktrace
+
+      - name: Sign app APK
+        id: sign_app
+        uses: ilharp/sign-android-release@v1.0.4
+        with:
+          releaseDir: app/build/outputs/apk/release
+          signingKey: ${{ secrets.ANDROID_SIGNING_KEY }}
+          keyAlias: ${{ secrets.ANDROID_KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          buildToolsVersion: 33.0.0
+
+      - name: Upload signed APK
+        id: upload_app
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: Signed app APK
+          path: ${{ steps.sign_app.outputs.signedFile }}
+
+  changelog:
+    name: Generate changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3.18.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    name: Publish release
+    needs: apk
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          token: {{ secrets.GITHUB_TOKEN }}
+          name: {{ steps.changelog.outputs.tag }}
+          tag_name: {{ steps.changelog.outputs.tag }}
+          body: {{ steps.changelog.outputs.clean_changelog }}
+          prerelease: false
+          files: {{ steps.sign_app.signedFile }}
