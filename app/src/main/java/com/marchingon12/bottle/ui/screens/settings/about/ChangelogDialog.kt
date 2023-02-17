@@ -15,37 +15,32 @@ import com.marchingon12.bottle.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChangelogDialog(onClick: () -> Unit) {
-    val openDialog = remember { mutableStateOf(true) }
 
     // Changelog Dialog
-    if (openDialog.value) {
-        AlertDialog(
-            onDismissRequest = { openDialog.value = false },
-            icon = { Icon(Icons.Filled.NewReleases, contentDescription = null) },
-            title = { Text(text = stringResource(id = R.string.changelog)) },
-            text = {
-                Text(
-                    text = stringResource(id = R.string.changelog_desc)
-                )
-            },
-            confirmButton = {
-                TextButton(
-                    onClick = {
-                        onClick()
-                        openDialog.value = false
-                    }
-                ) { Text("Confirm") }
-            },
-            dismissButton = {
-                TextButton(
-                    onClick = {
-                        onClick()
-                        openDialog.value = false
-                    }
-                ) { Text("Dismiss") }
-            }
-        )
-    }
+    AlertDialog(
+        onDismissRequest = onClick,
+        icon = { Icon(Icons.Filled.NewReleases, contentDescription = null) },
+        title = { Text(text = stringResource(id = R.string.changelog)) },
+        text = {
+            Text(
+                text = stringResource(id = R.string.changelog_desc)
+            )
+        },
+        confirmButton = {
+            TextButton(
+                onClick = {
+                    onClick()
+                }
+            ) { Text("Confirm") }
+        },
+        dismissButton = {
+            TextButton(
+                onClick = {
+                    onClick()
+                }
+            ) { Text("Dismiss") }
+        }
+    )
 }
 
 
