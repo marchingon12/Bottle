@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
                 navController = rememberNavController()
                 NavigationController(navController = navController)
 
-                Timber.d("App launched")
+                Timber.d("App launched :D")
             }
         }
     }
