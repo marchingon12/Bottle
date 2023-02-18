@@ -77,7 +77,7 @@ jobs:
           skip-tag: "true"
   release:
     name: Publish release
-    needs: apk
+    needs: [apk, changelog]
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
