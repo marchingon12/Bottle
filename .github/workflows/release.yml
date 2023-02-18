@@ -65,11 +65,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.3.0
+        with:
+          fetch-depth: 0
+          clean: "true"
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3.18.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-git-pull: "true"
+          skip-tag: "true"
   release:
     name: Publish release
     needs: apk
