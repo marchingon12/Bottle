@@ -8,8 +8,9 @@ on:
   push:
     tags:
       - "v*"
-    branches:
-      - master
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
 
 jobs:
   apk:
@@ -69,7 +70,6 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3.18.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
   release:
     name: Publish release
     needs: apk
