@@ -27,4 +27,10 @@
     <!-- Accessibility -->
     <string name="back_button">Go back</string>
     <string name="settings_button">Settings</string>
+    <string name="paypal_button">PayPal</string>
+    <string name="bmc_button">Buy Me A Coffee</string>
+    <string name="github_button">Github</string>
+    <string name="translate_button">Translate</string>
+
+
 </resources>
