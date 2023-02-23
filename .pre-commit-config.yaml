@@ -5,6 +5,7 @@ repos:
     hooks:
       - id: check-yaml
       - id: trailing-whitespace
+        exclude: README.md
 
   - repo: https://github.com/compilerla/conventional-pre-commit
     rev: v2.1.1
