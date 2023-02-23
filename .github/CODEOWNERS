@@ -2,4 +2,4 @@
 *                               @marchingon12
 
 # Dot-files are handled by the lead dev (.gitignore and co)
-*                               @marchingon12
+.*                              @marchingon12
